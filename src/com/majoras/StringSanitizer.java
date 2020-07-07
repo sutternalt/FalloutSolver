@@ -1,11 +1,9 @@
 package com.majoras;
 
-import java.util.Set;
-import java.util.TreeMap;
-
-public class StringSanitizer {
-
-
+/**
+ * A set of utility methods for taking input strings and putting them into an expected format
+ */
+class StringSanitizer {
     /**
      * reduces a string to a positive integer chain if possible; otherwise, returns -1
      * @param input any string (preferably one containing a number)
@@ -43,63 +41,26 @@ public class StringSanitizer {
     }
 
     /**
-     * takes a "dirty" string and ensures it follows formatting
+     * takes a "dirty" string and replaces it with capitalized commandStrings, if it contains any
      *
-     * specifically: if RESTART or QUIT COMMANDS are detected, sanitize shortens the string to said command on its own;
-     * if characters other than spaces or letters are detected, sanitize replaces them with spaces
-     * finally, sanitize replaces all letters with capital versions
+     * specifically: if Commands are detected, this method shortens the string to the first commandString on its own;
+     * this method will always capitalize the input.
      *
-     * @param inputHandler
-     * @param dirtyString unsanitized string
-     * @return sanitized string
+     * @param dirtyString raw input string
+     * @return either a capitalized original string or one of the command strings (found in the enum Command)
      */
-    static String sanitize(InputHandler inputHandler, String dirtyString)
+    static String replaceWithCommandStrings(String dirtyString)
     {
-        //capitalize all letters
+        //capitalize all letters; this allows users to enter commands in lowercase and the system will still execute them
         String cleanString = dirtyString.toUpperCase();
         //if string contains command, shorten string to command and return it, skipping any other processing
-        cleanString = replaceWithCommands(inputHandler, cleanString, Main.getCommandHandler().getCommands());
+        if(CommandHandler.containsACommand(dirtyString))
+        {
+            return CommandHandler.reduceToFirstCommand(dirtyString).commandString();
+        }
         //if string contains characters other than letters and spaces, replace them with spaces
 
         return cleanString;
-    }
-
-    /**
-     * replaces a string with specified commands if string contains said commands
-     *
-     * replaces with the first command it finds
-     * @param inputHandler
-     * @param input String to be checked/replaced
-     * @return a string consisting of either the first occurence of any of [commands] or the original input, unaltered
-     **/
-    private static String replaceWithCommands(InputHandler inputHandler, String input, Set<String> commands)
-    {
-        String commandReplacedString = input;
-        TreeMap<Integer,String> commandsByIndex = new TreeMap<>(); //keys are index of first occurence, vals are commands
-
-        //create map by searching input for commands
-        for(String command : commands)
-        {
-            commandsByIndex.put(input.indexOf(command),command);
-        }
-
-        //clear commandsByIndex of commands that weren't found
-        commandsByIndex.remove(-1);
-
-        //if map is empty, make dummy first value of -1 to prevent null reference errors
-        if(commandsByIndex.firstEntry() == null)
-        {
-            commandsByIndex.put(-1,"BAD");
-        }
-        int firstKey = commandsByIndex.firstEntry().getKey();
-
-        //search map for first command, if one exists, and replace string with first command
-        if(firstKey != -1)
-        {
-            commandReplacedString = commandsByIndex.get(firstKey);
-        }
-
-        return commandReplacedString;
     }
 
     /**

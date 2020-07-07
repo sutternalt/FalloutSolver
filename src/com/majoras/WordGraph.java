@@ -42,7 +42,7 @@ class WordGraph {
      * @param lettersInCommon the number of letters in common we're filtering neighbors by
      * @return a set of words with the number of lettersInCommon to the input word
      */
-    static Set<Word> getWordsFrom(Word word, int lettersInCommon)
+    Set<Word> getWordsFrom(Word word, int lettersInCommon)
     {
         //get a set of all edges from the word
         //then filter that set down to edges with only the correct number of letters in common
@@ -57,26 +57,6 @@ class WordGraph {
         linkedwords.remove(word);
         //return that set
         return linkedwords;
-    }
-
-    /**
-     *  polls all edges for their letters-in-common, then reports the number of unique LIC's to numUnique_LettersInCommon_s
-     * @param word
-     */
-    static void calculateUniqueLICs(Word word)
-    {
-        HashSet<Integer> lettersInCommon_s = new HashSet<>();
-
-        for(WordEdge edge : word.edges)
-        {
-            lettersInCommon_s.add(edge.getLettersInCommon());
-        }
-        word.numUnique_LettersInCommon_s = lettersInCommon_s.size();
-    }
-
-    static int getNumUnique_LettersInCommon_s(int numUnique_LettersInCommon_s)
-    {
-        return numUnique_LettersInCommon_s;
     }
 
     /**

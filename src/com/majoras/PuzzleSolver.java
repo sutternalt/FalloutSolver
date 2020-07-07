@@ -3,21 +3,21 @@ package com.majoras;
 import java.util.Objects;
 import java.util.Set;
 
-public class PuzzleSolver {
+/**
+ * Class used to manage the logic of actually solving the fallout computer-hacking puzzles
+ */
+class PuzzleSolver {
 
-    WordGraph wordGraph;
-    InputHandler inputHandler;
+    private WordGraph wordGraph;
 
     /**
      * sets up wordGraph by prompting the user; initializes the InputHandler
      */
-    public PuzzleSolver()
+    PuzzleSolver()
     {
-        inputHandler = new InputHandler();
-
         //get set of words
         System.out.println("Type list of words, separated by spaces, and then press Enter.");
-        String sanitizedInput = inputHandler.getWordsString();
+        String sanitizedInput = InputHandler.getWordsString();
         System.out.println("Read as: " + sanitizedInput);
         if(Objects.isNull(sanitizedInput)){
             Main.start();
@@ -45,10 +45,9 @@ public class PuzzleSolver {
         //ask user to try the word
         System.out.println("Try "+word.getLabel()+". Number of letters in common?");
         //get user input indicating how many letters input word has in common with the answer
-        inputHandler = new InputHandler();
-        int letterInCommon = inputHandler.getNum();
+        int letterInCommon = InputHandler.getNum();
         //did that solve the puzzle?
-        Set<Word> possibleNewMatches = WordGraph.getWordsFrom(word,letterInCommon);
+        Set<Word> possibleNewMatches = wordGraph.getWordsFrom(word,letterInCommon);
         System.out.print("Try ");
         possibleNewMatches.forEach(match -> System.out.print(match.getLabel() + " "));
         System.out.println("\b. Did it work? [Y/N]");

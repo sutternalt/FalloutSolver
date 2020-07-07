@@ -23,7 +23,25 @@ class Word implements Comparable<Word>
     }
 
     /**
+     *  polls all edges for their letters-in-common, then reports the number of unique LIC's to numUnique_LettersInCommon_s
+     *
+     *  Zero counts as a unique letter in common
+     */
+    private void calculateUniqueLICs()
+    {
+        HashSet<Integer> lettersInCommon_s = new HashSet<>();
+
+        for(WordEdge edge : edges)
+        {
+            lettersInCommon_s.add(edge.getLettersInCommon());
+        }
+        numUnique_LettersInCommon_s = lettersInCommon_s.size();
+    }
+
+    /**
      * adds an edge linking from this Word to successor, provided edge does not already exist
+     *
+     * If edge does exist, addEdge does nothing
      * @param successor The word to link to from this word
      */
     void addEdge(Word successor)
@@ -40,7 +58,7 @@ class Word implements Comparable<Word>
 
             connectedWords.add(successor);
 
-            WordGraph.calculateUniqueLICs(this);
+            calculateUniqueLICs();
         }
         //otherwise, do nothing; this edge has already been added
     }
@@ -80,7 +98,7 @@ class Word implements Comparable<Word>
      */
     @Override
     public int compareTo(Word word) {
-        return Integer.compare(this.numUnique_LettersInCommon_s, WordGraph.getNumUnique_LettersInCommon_s(word.numUnique_LettersInCommon_s));
+        return Integer.compare(this.numUnique_LettersInCommon_s, word.getNumUnique_LettersInCommon_s());
     }
 
     /**
@@ -89,20 +107,27 @@ class Word implements Comparable<Word>
      * assumes the two words are the same case and the same length
      *
      * For example, (FORD, FORT) = 3, but (FORD, TROF) = 0
-     * @param wordEdge
+     * @param otherWord The word you're comparing against
      */
-    void calculateLettersInCommon(WordEdge wordEdge){
-        assert (getLabel().length() == wordEdge.successor.getLabel().length()) : "Words are different lengths!";
+    int lettersInCommon(Word otherWord){
+        assert (getLabel().length() == otherWord.getLabel().length()) : "Words are different lengths!";
+        String otherString = otherWord.getLabel();
 
-        wordEdge.lettersInCommon = 0;
-        char[] predecessorChars = getLabel().toCharArray();
-        char[] successorChars = wordEdge.successor.getLabel().toCharArray();
+        int lettersInCommon = 0;
+        char[] predecessorChars = label.toCharArray();
+        char[] successorChars = otherString.toCharArray();
 
         for(int i = 0; i<predecessorChars.length; i++)
         {
             if(predecessorChars[i] == successorChars[i]){
-                wordEdge.lettersInCommon++;
+                lettersInCommon++;
             }
         }
+
+        return lettersInCommon;
+    }
+
+    int getNumUnique_LettersInCommon_s() {
+        return numUnique_LettersInCommon_s;
     }
 }

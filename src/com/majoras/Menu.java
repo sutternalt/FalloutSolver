@@ -2,7 +2,8 @@ package com.majoras;
 
 import java.util.Set;
 
-public class Menu {
+class Menu {
+
     /**
      * displays the main menu, version info, and COMMANDS
      */
@@ -10,25 +11,23 @@ public class Menu {
     {
         System.out.println("   //Fallout Solver\\\\");
         System.out.println("         v." + Main.VERSION );
-        System.out.println(QUITCOMMAND + " to quit, "+ RESTARTCOMMAND +" to start\n" + "=========================\n");
+        System.out.println(Command.QUIT.toString() + " to quit, "+ Command.RESTART.toString() +" to start\n" + "=========================\n");
     }
 
     /**
      * Prompts the user to select from a list of words
      *
-     * This function arbitrarily limits the number of possible matching words to 100, which seems reasonably
-     * out of bounds
      * @param words the list of words the user must select from
      * @return the word the user selected
      */
     static Word wordSelector(Set<Word> words)
     {
-        final int LOWERLIMIT = 0;
-        final int REASONABLELIMITOFMATCHINGWORDS = 100;
+        final int MINSIZEOFSET = 0;
+        final int SETSIZE = words.size();
 
         Word wordSelected;
-        Word[] wordsAsArray = new Word[REASONABLELIMITOFMATCHINGWORDS];
-        int maxIndex = LOWERLIMIT;
+        Word[] wordsAsArray = new Word[SETSIZE];
+        int maxIndex = MINSIZEOFSET;
 
         //In addition to displaying a list of words, create an array of words from the set
         for(Word word:words)
@@ -37,9 +36,9 @@ public class Menu {
             wordsAsArray[maxIndex] = word;
             maxIndex++;
         }
-        Main.inputHandler = new InputHandler();
-        int inputNum = Main.inputHandler.getNum();
-        if(inputNum < LOWERLIMIT || maxIndex < inputNum)
+
+        int inputNum = InputHandler.getNum();
+        if(inputNum < MINSIZEOFSET || maxIndex < inputNum)
         {
             System.out.println("Selection not found. Try again:");
             return wordSelector(words);

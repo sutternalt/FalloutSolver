@@ -6,23 +6,18 @@ import java.util.*;
  *  create a new InputHandler object
  */
 class InputHandler {
-    //private boolean inputContainsCommand;
-
-    InputHandler() {
-    }
-
     /**
      * Continuously queries the user for either y, Y, n, or N and parses that into a boolean
-     * @return a boolean interpretation of user input
+     * @return a boolean interpretation of user input or false if a command is found
      */
     static boolean getYesNo()
     {
-        boolean inputAsBoolean = false;
-        Main.inputHandler = new InputHandler();
-        String yesNo = Main.inputHandler.getWordsString();
-        if(Main.inputHandler.containedCommand())
+        String yesNo = getWordsString();
+        boolean inputAsBoolean;
+        if(CommandHandler.containsACommand(yesNo))
         {
-            CommandHandler.handleCommands(yesNo);
+            Main.getCommandHandler().sendCommand(CommandHandler.reduceToFirstCommand(yesNo));
+            inputAsBoolean = false;
         }
         else if(yesNo.equals("Y")||yesNo.equals("y"))
         {
@@ -35,8 +30,7 @@ class InputHandler {
         else
         {
             System.out.println("Please enter either 'Y' or 'N'.");
-            inputAsBoolean = getYesNo();
-
+            return getYesNo();
         }
         return inputAsBoolean;
     }
@@ -45,17 +39,17 @@ class InputHandler {
      * Continuously queries the user for a positive int until the user enters either a positive int or a command
      * @return the positive integer the user eventually entered or -1 if the user entered a command
      */
-    int getNum() {
+    static int getNum() {
 
         int inputNumber = -1;
 
         //get input
         String inputString = getInput();
         //sanitize input
-        inputString = StringSanitizer.sanitize(this, inputString);
+        inputString = StringSanitizer.replaceWithCommandStrings(inputString);
 
         //is this command?
-        if(!inputContainsCommand){
+        if(!CommandHandler.containsACommand(inputString)){
             inputNumber = StringSanitizer.reduceToFirstPositiveInteger(inputString);
 
             //is this a positive integer (ie, was the input good)?
@@ -68,7 +62,7 @@ class InputHandler {
         }
         else
         {
-            CommandHandler.handleCommands(inputString);
+            Main.getCommandHandler().sendCommand(CommandHandler.reduceToFirstCommand(inputString));
         }
 
         return inputNumber;
@@ -80,11 +74,11 @@ class InputHandler {
      *
      * @return sanitized input as a string from user or null if an error was encountered
      */
-    String getWordsString(){
+    static String getWordsString(){
 
         String input = getInput();
 
-        if(CommandHandler.isACommand(input))
+        if(CommandHandler.containsACommand(input))
         {
             Main.getCommandHandler().sendCommand(CommandHandler.reduceToFirstCommand(input));
         }
@@ -101,13 +95,13 @@ class InputHandler {
      *
      * @return sanitized input as a string from user or null if an error was encountered
      */
-    String getInput(){
+    private static String getInput(){
         String input = null;
         System.out.print("> ");
 
         try {
             input = new Scanner(System.in).nextLine();
-            input = StringSanitizer.sanitize(this, input);
+            input = StringSanitizer.replaceWithCommandStrings(input);
         }
         catch(NoSuchElementException e)
         {

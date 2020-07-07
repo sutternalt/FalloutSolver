@@ -7,21 +7,15 @@ import java.util.concurrent.LinkedBlockingQueue;
  * A message-based command system; stores commands in a FIFO data structure (queue) and executes all of them sequentially
  * upon calling handleCommands
  */
-public class CommandHandler {
+class CommandHandler {
 
     private Queue<Command> messageQueue;
-    private static Map<Command,String> commandStrings;
 
     /**
      * specifies command strings and adds them to the commandStrings map
      */
-    public CommandHandler()
+    CommandHandler()
     {
-        commandStrings = new HashMap<>();
-        commandStrings.put(Command.fwdSlash,"/");
-        commandStrings.put(Command.quit,"\\Q");
-        commandStrings.put(Command.restart,"\\R");
-
         messageQueue = new LinkedBlockingQueue<>();
     }
 
@@ -29,93 +23,72 @@ public class CommandHandler {
      * deals with commands contained in the messageQueue; assumes command is contained in COMMANDS
      */
     void handleCommands() {
-        Iterator messageIterator = messageQueue.iterator();
-        while (messageIterator.hasNext()) {
-            Command currentCommand = (Command)messageIterator.next();
-            performCommand(currentCommand);
+        for(Command command : messageQueue)
+        {
+            command.performCommand();
         }
     }
 
     /**
-     * performs the action associated with a command
-     * @param command
-     */
-    private void performCommand(Command command)
-    {
-        switch(command) {
-            case fwdSlash: {
-                System.out.println("Forward slash(es) detected. Use '\\' insetad.\nRestarting...\n");
-                Main.start();
-                break;
-            }
-            case quit: {
-                System.exit(0);
-                break;
-            }
-            default:
-            case restart: {
-                System.out.println();
-                Main.start();
-                break;
-            }
-        }
-    }
-
-    /**
-     *
-     * @param input
+     * Checks string to see if it contains a command
+     * @param input the string to be checked
      * @return true if input matches a string associated with a command
      */
-    static boolean isACommand(String input)
+    static boolean containsACommand(String input)
     {
-        return getCommands().contains(input);
-    }
-
-    /**
-     *
-     * @return the set of Strings associated with all commands
-     */
-    static Set<String> getCommands()
-    {
-        return new HashSet<String>(commandStrings.values());
+        return Command.getCommandStringsAsSet().contains(input);
     }
 
     /**
      * Adds specified command to the message queue
      *
-     * Assumes commands are contained within the command list; this is guaranteed if you use containsCommand and
-     * reduceToFirstCommand to parse strings into commands
+     * Quits the program with status 1 if there are more than Integer.MAX commands added to the queue
      *
      * @param command the Command to be added to the message queue
-     * @return true if command added successfully
      */
-    boolean sendCommand(Command command)
+    void sendCommand(Command command)
     {
-        assert commandStrings.keySet().contains(command) : "Command not recognized!";
-        return messageQueue.offer(command);
+        try
+        {
+            messageQueue.add(command);
+        }
+        catch(IllegalStateException e)
+        {
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
     }
 
 
     /**
+     * Converts a string to the Command of the first matching name string contained in the input.
+     * Assumes that said string already contains a command.
      *
-     * @param input
-     * @return
-     * @throws IllegalArgumentException
+     * @param stringWithCommandName the String containing > 0 commands to reduce
+     * @return String of the first command found; this matches the name found in the Command enum
      */
-    boolean reduceToFirstCommand(String input)
+    static Command reduceToFirstCommand(String stringWithCommandName)
     {
         //assert string does, in fact, contain a command
+        assert CommandHandler.containsACommand(stringWithCommandName) : "Input must contain a command!";
+
+        //search for one of command strings and index by first character placement
+
+        //create map of commands arranged by index of first instance of command found
+        TreeMap<Integer, String> containedCommandsByIndex = new TreeMap<>();
+        for(String command : Command.allCommandStrings())
+        {
+            containedCommandsByIndex.put(stringWithCommandName.indexOf(command),command);
+        }
+        //remove any commands that weren't actually found
+        containedCommandsByIndex.remove(-1);
+
+        //reduce string to first command
+        return Command.valueOf(containedCommandsByIndex.firstEntry().getValue());
     }
 
-    boolean stringContainsCommand(String input){
-
-
-        for(Integer index:commandsByIndex.keySet()){
-            if(index >= 0) {
-                inputHandler.inputContainsCommand = true;
-                break;
-            }
-        }
-        return inputContainsCommand;
+    //for testing only
+    Queue<Command> getMessageQueue() {
+        return messageQueue;
     }
 }

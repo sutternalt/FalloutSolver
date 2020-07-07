@@ -16,7 +16,7 @@ class WordEdge implements Comparable<WordEdge>
     {
         this.predecessor = predecessor;
         this.successor = successor;
-        predecessor.calculateLettersInCommon(this);
+        lettersInCommon = predecessor.lettersInCommon(successor);
     }
 
     /**

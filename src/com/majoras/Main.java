@@ -21,7 +21,6 @@ public class Main {
      * resets all variables, displays the menu, waits for input
      */
     static void start(){
-        InputHandler inputHandler = new InputHandler();
         Menu.displayMenu();
         PuzzleSolver solver = new PuzzleSolver();
 
