@@ -46,8 +46,8 @@ class Word implements Comparable<Word>
      */
     void addEdge(Word successor)
     {
-        //check if successor is in connectedWords
-        boolean alreadyConnected = connectedWords.contains(successor);
+        //prevent addEdge from adding this word or a word already connected to this word
+        boolean alreadyConnected = (successor.equals(this) || connectedWords.contains(successor));
 
         //if not, create a new edge connecting the two and add it to this Word's edges,
         // add successor's label to connectedWords, and finally recalculate the number of unique LIC's
@@ -92,13 +92,24 @@ class Word implements Comparable<Word>
     }
 
     /**
-     * two Words are compared by the number of unique LIC's they have
-     * @param word the Word to compare this word to
+     * two Words are compared by the number of unique LIC's they have; -1 if this object is less than the other
+     *
+     * Two words are equal (compareTo returns 0) iff Word.equals returns true; the secondary ordering of Words is
+     * alphabetically.
+     *
+     * @param otherWord the Word to compare this word to
      * @return 1 if the other Word has fewer unique LIC's, 0 if they are equal, -1 if the other word has more unique LIC's
      */
     @Override
-    public int compareTo(Word word) {
-        return Integer.compare(this.numUnique_LettersInCommon_s, word.getNumUnique_LettersInCommon_s());
+    public int compareTo(Word otherWord) {
+        int comparison = Integer.compare(this.numUnique_LettersInCommon_s, otherWord.getNumUnique_LettersInCommon_s());
+        if(comparison == 0 && !this.equals(otherWord))
+        {
+            comparison = label.compareTo(otherWord.getLabel());
+        }
+        //otherwise, equality is accurate
+
+        return comparison;
     }
 
     /**

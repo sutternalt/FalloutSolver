@@ -18,30 +18,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/majoras/Word.java">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/StringSanitizerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/majoras/Command.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-415">
+              <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/majoras/WordTest.java">
+        <entry file="file://$PROJECT_DIR$/src/com/majoras/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="221">
+              <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/CommandTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/InputHandlerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
               <folding>
-                <element signature="e#1096#1097#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1189#1190#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-                <element signature="e#1281#1282#0" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1144#1145#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/MenuTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/PuzzleSolverTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+              <folding>
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/WordEdgeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -49,8 +100,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/majoras/WordGraphTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="476">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <folding>
+                <element signature="e#692#693#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/majoras/WordTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#1096#1097#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1189#1190#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1281#1282#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,6 +159,14 @@
       <find>calculateUnique</find>
       <find>sanitize</find>
       <find>nonalphasreplaced</find>
+      <find>equal</find>
+      <find>connectedWords</find>
+      <find>.contains(</find>
+      <find>compareto</find>
+      <find>something w</find>
+      <find>try</find>
+      <find>something we</find>
+      <find>handlecom</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,25 +176,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/com/majoras/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/InputHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/StringSanitizer.java" />
         <option value="$PROJECT_DIR$/src/com/majoras/WordEdge.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/CommandTest.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/Command.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/CommandHandlerTest.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/InputHandlerTest.java" />
         <option value="$PROJECT_DIR$/test/com/majoras/MenuTest.java" />
         <option value="$PROJECT_DIR$/test/com/majoras/PuzzleSolverTest.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/StringSanitizerTest.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/WordEdgeTest.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/WordGraph.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/PuzzleSolver.java" />
-        <option value="$PROJECT_DIR$/test/com/majoras/WordGraphTest.java" />
-        <option value="$PROJECT_DIR$/src/com/majoras/Word.java" />
         <option value="$PROJECT_DIR$/test/com/majoras/WordTest.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/WordEdgeTest.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/CommandTest.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/Word.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/WordGraph.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/WordGraphTest.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/StringSanitizerTest.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/CommandHandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/StringSanitizer.java" />
+        <option value="$PROJECT_DIR$/test/com/majoras/InputHandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/Menu.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/Command.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/InputHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/PuzzleSolver.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/CommandHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/majoras/Main.java" />
       </list>
     </option>
   </component>
@@ -129,7 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -169,6 +248,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,7 +292,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WordGraphTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.majoras.Main" />
+      <module name="FalloutSolver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.majoras.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FalloutSolver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.majoras.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.majoras" />
+      <option name="MAIN_CLASS_NAME" value="com.majoras.CommandHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InputHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FalloutSolver" />
       <extension name="coverage">
@@ -223,21 +331,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.majoras" />
       <option name="MAIN_CLASS_NAME" value="com.majoras.InputHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FalloutSolver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.majoras.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.majoras" />
-      <option name="MAIN_CLASS_NAME" value="com.majoras.MenuTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,7 +351,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordEdgeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringSanitizerTest.reduceToFirstPositiveIntegerWorksIfIntIsFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FalloutSolver" />
       <extension name="coverage">
         <pattern>
@@ -267,34 +360,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.majoras" />
-      <option name="MAIN_CLASS_NAME" value="com.majoras.WordEdgeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WordGraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FalloutSolver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.majoras.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.majoras" />
-      <option name="MAIN_CLASS_NAME" value="com.majoras.WordGraphTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.majoras.StringSanitizerTest" />
+      <option name="METHOD_NAME" value="reduceToFirstPositiveIntegerWorksIfIntIsFirst" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WordGraphTest" />
-        <item itemvalue="JUnit.WordEdgeTest" />
-        <item itemvalue="JUnit.StringSanitizerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.InputHandlerTest" />
-        <item itemvalue="JUnit.MenuTest" />
+        <item itemvalue="JUnit.StringSanitizerTest" />
+        <item itemvalue="JUnit.CommandHandlerTest" />
+        <item itemvalue="JUnit.StringSanitizerTest.reduceToFirstPositiveIntegerWorksIfIntIsFirst" />
       </list>
     </recent_temporary>
   </component>
@@ -312,35 +391,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_FalloutSolver - 2020.07.05 at 13h 39m 38s.xml">
-      <configuration name="All in FalloutSolver" configurationId="JUnit" />
+    <history-entry file="StringSanitizerTest - 2020.07.08 at 18h 23m 34s.xml">
+      <configuration name="StringSanitizerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandTest - 2020.07.05 at 14h 49m 35s.xml">
-      <configuration name="CommandTest" configurationId="JUnit" />
+    <history-entry file="StringSanitizerTest - 2020.07.08 at 18h 23m 48s.xml">
+      <configuration name="StringSanitizerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandTest - 2020.07.05 at 14h 50m 13s.xml">
-      <configuration name="CommandTest" configurationId="JUnit" />
+    <history-entry file="StringSanitizerTest - 2020.07.08 at 18h 37m 32s.xml">
+      <configuration name="StringSanitizerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandTest - 2020.07.05 at 17h 13m 01s.xml">
-      <configuration name="CommandTest" configurationId="JUnit" />
+    <history-entry file="StringSanitizerTest - 2020.07.08 at 18h 51m 07s.xml">
+      <configuration name="StringSanitizerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuTest - 2020.07.05 at 17h 13m 38s.xml">
-      <configuration name="MenuTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="InputHandlerTest - 2020.07.05 at 17h 14m 10s.xml">
+    <history-entry file="InputHandlerTest - 2020.07.08 at 18h 51m 16s.xml">
       <configuration name="InputHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringSanitizerTest - 2020.07.05 at 17h 52m 42s.xml">
-      <configuration name="StringSanitizerTest" configurationId="JUnit" />
+    <history-entry file="InputHandlerTest - 2020.07.08 at 18h 52m 29s.xml">
+      <configuration name="InputHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringSanitizerTest - 2020.07.05 at 17h 56m 05s.xml">
-      <configuration name="StringSanitizerTest" configurationId="JUnit" />
+    <history-entry file="InputHandlerTest - 2020.07.08 at 18h 53m 38s.xml">
+      <configuration name="InputHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordEdgeTest - 2020.07.05 at 18h 06m 42s.xml">
-      <configuration name="WordEdgeTest" configurationId="JUnit" />
+    <history-entry file="InputHandlerTest - 2020.07.08 at 18h 53m 57s.xml">
+      <configuration name="InputHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordGraphTest - 2020.07.05 at 18h 22m 42s.xml">
-      <configuration name="WordGraphTest" configurationId="JUnit" />
+    <history-entry file="InputHandlerTest - 2020.07.08 at 19h 00m 12s.xml">
+      <configuration name="InputHandlerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="InputHandlerTest - 2020.07.08 at 19h 00m 15s.xml">
+      <configuration name="InputHandlerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -356,7 +435,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2739872" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -366,7 +445,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,7 +454,6 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -384,6 +462,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32995737" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
@@ -416,18 +495,19 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="dirtyString" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FalloutSolver$Main.ic" NAME="Main Coverage Results" MODIFIED="1593970710111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/FalloutSolver$All_in_FalloutSolver.ic" NAME="All in FalloutSolver Coverage Results" MODIFIED="1593970776331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/com/majoras/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/majoras/MainTest.java" />
     <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -442,54 +522,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/WordGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        <state relative-caret-position="115">
+          <caret line="94" column="111" selection-start-line="94" selection-start-column="111" selection-end-line="94" selection-end-column="111" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4610#4611#0" expanded="true" />
+            <element signature="e#4660#4661#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/PuzzleSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="49" column="83" lean-forward="true" selection-start-line="49" selection-start-column="83" selection-end-line="49" selection-end-column="83" />
+        <state relative-caret-position="176">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#15152#15153#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/CommandHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/majoras/WordEdge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="475">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#914#915#0" expanded="true" />
@@ -498,55 +556,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/Command.java">
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/WordGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="6" lean-forward="true" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        <state relative-caret-position="476">
+          <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0-M1/junit-jupiter-api-5.7.0-M1.jar!/org/junit/jupiter/api/Assertions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#19260#19261#0" expanded="true" />
+            <element signature="e#19319#19320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0-M1/junit-platform-commons-1.7.0-M1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="358" selection-start-line="358" selection-end-line="358" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/majoras/StringSanitizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="367">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="103" selection-start-line="13" selection-start-column="103" selection-end-line="13" selection-end-column="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/majoras/InputHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="-1214">
+          <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/PuzzleSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3495#3496#0" expanded="true" />
+            <element signature="e#3541#3542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/CommandHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/CommandHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+        <state relative-caret-position="-568">
+          <caret line="27" column="97" selection-start-line="27" selection-start-column="97" selection-end-line="27" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2399#2400#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/CommandTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/InputHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="367">
+          <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
           <folding>
             <element signature="e#1144#1145#0" expanded="true" />
             <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -571,47 +679,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/StringSanitizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="435">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/WordEdgeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        <state relative-caret-position="27">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/WordGraphTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/majoras/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state relative-caret-position="476">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/majoras/WordTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="289">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
             <element signature="e#1189#1190#0" expanded="true" />
             <element signature="e#1243#1244#0" expanded="true" />
             <element signature="e#1281#1282#0" expanded="true" />
             <element signature="e#1335#1336#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-415">
+          <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/majoras/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -64,11 +64,12 @@ class InputHandlerTest {
 
     @Test
     void getNumWorksOnNum() {
-        assertEquals(testGetNum("5"),5);
+        assertEquals(5,testGetNum("5"));
     }
     @Test
     void getNumGivesMinusOneOnCommand(){
-        assertEquals(testGetNum(Command.QUIT.commandString()),-1);
+        Main.testInitCommandHandler();
+        assertEquals(-1,testGetNum(Command.QUIT.commandString()));
     }
 
 

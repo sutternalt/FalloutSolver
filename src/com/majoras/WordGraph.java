@@ -1,6 +1,7 @@
 package com.majoras;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -18,19 +19,24 @@ class WordGraph {
     {
         //create unlinked Words
         words = new TreeSet<>();
+        HashSet<Word> unorderedWords = new HashSet<>();
+
         for(String wordStr : wordsIn)
         {
-            words.add(new Word(wordStr));
+            unorderedWords.add(new Word(wordStr));
         }
 
         //link Words with edges to every other Word
-        for(Word word:words)
+        for(Word word:unorderedWords)
         {
-            for(Word otherWord:words)
+            for(Word otherWord:unorderedWords)
             {
                 word.addEdge(otherWord);
             }
         }
+
+        //add all the words to the treeSet
+        words.addAll(unorderedWords);
     }
 
     /**
@@ -42,8 +48,10 @@ class WordGraph {
      * @param lettersInCommon the number of letters in common we're filtering neighbors by
      * @return a set of words with the number of lettersInCommon to the input word
      */
-    Set<Word> getWordsFrom(Word word, int lettersInCommon)
+    Set<Word> getWordsFrom(String wordLabel, int lettersInCommon)
     {
+        Word word = this.find(wordLabel);
+
         //get a set of all edges from the word
         //then filter that set down to edges with only the correct number of letters in common
         Set <WordEdge> edgesWeCareAbout = word.getEdges()
@@ -60,6 +68,29 @@ class WordGraph {
     }
 
     /**
+     * Finds the word with the label contained in this graph or returns null
+     * @param label
+     * @return
+     */
+    private Word find(String label)
+    {
+        Word foundWord = null;
+        Word word;
+
+        Iterator it = words.iterator();
+        while(foundWord == null && it.hasNext())
+        {
+           word = (Word)it.next();
+            if(word.getLabel().equals(label))
+            {
+                foundWord = word;
+            }
+        }
+
+        return foundWord;
+    }
+
+    /**
      *
      * @return word with the most unique letters in common's
      */
@@ -68,12 +99,21 @@ class WordGraph {
     }
 
     /**
+     * Checks to see if the wordgraph contains a particular word
      *
-     * @param word the word we're looking for
+     * Note that this must check by label to account for newly-created/unlinked words having a unique LIC's count of 0,
+     * while those in the graph would have a non-zero unique LIC's
+     *
+     * @param wordLabel the label of the word we're looking for
      * @return true iff this WordGraph contains word
      */
-    boolean contains(Word word)
+    boolean contains(String wordLabel)
     {
-        return words.contains(word);
+        HashSet<String> wordLabels = new HashSet<>();
+        for(Word w : words)
+        {
+            wordLabels.add(w.getLabel());
+        }
+        return wordLabels.contains(wordLabel);
     }
 }

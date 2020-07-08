@@ -29,16 +29,16 @@ class WordGraphTest {
 
     @Test
     void getWordsFrom() {
-        assertEquals(wordGraph.getWordsFrom(AAAAA,1).toArray()[0],ACCCC);
+        assertEquals(ACCCC,wordGraph.getWordsFrom("AAAAA",1).toArray()[0]);
     }
 
     @Test
     void getBestWord() {
-        assertEquals(wordGraph.getBestWord(),AAAAA);
+        assertEquals(AAAAA,wordGraph.getBestWord());
     }
 
     @Test
     void contains() {
-        assertTrue(wordGraph.contains(AAABC));
+        assertTrue(wordGraph.contains(AAABC.getLabel()));
     }
 }

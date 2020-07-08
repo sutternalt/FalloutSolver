@@ -12,6 +12,9 @@ class InputHandler {
      */
     static boolean getYesNo()
     {
+        HashSet<String> yes = new HashSet<>(Arrays.asList("Y","y","yes","Yes","YES"));
+        HashSet<String> no = new HashSet<>(Arrays.asList("N","n","no","No","NO"));
+
         String yesNo = getWordsString();
         boolean inputAsBoolean;
         if(CommandHandler.containsACommand(yesNo))
@@ -19,11 +22,11 @@ class InputHandler {
             Main.getCommandHandler().sendCommand(CommandHandler.reduceToFirstCommand(yesNo));
             inputAsBoolean = false;
         }
-        else if(yesNo.equals("Y")||yesNo.equals("y"))
+        else if(yes.contains(yesNo))
         {
             inputAsBoolean = true;
         }
-        else if (yesNo.equals("N")||yesNo.equals("n"))
+        else if (no.contains(yesNo))
         {
             inputAsBoolean = false;
         }

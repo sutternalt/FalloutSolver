@@ -16,11 +16,17 @@ class PuzzleSolver {
     PuzzleSolver()
     {
         //get set of words
+
         System.out.println("Type list of words, separated by spaces, and then press Enter.");
-        String sanitizedInput = InputHandler.getWordsString();
-        System.out.println("Read as: " + sanitizedInput);
-        if(Objects.isNull(sanitizedInput)){
-            Main.start();
+
+        String sanitizedInput = "";
+        while(sanitizedInput.equals(""))
+        {
+            sanitizedInput = InputHandler.getWordsString();
+            System.out.println("Read as: " + sanitizedInput);
+            if (sanitizedInput.equals("")) {
+                System.out.println("Empty input detected. Try again.");
+            }
         }
 
         //handle COMMANDS
@@ -40,40 +46,67 @@ class PuzzleSolver {
      */
     void solvePuzzle(Word word)
     {
-        assert (wordGraph.contains(word)) : "Word not in wordgraph!";
+        assert (wordGraph.contains(word.getLabel())) : "Word not in wordgraph!";
+        CommandHandler commandHandler = Main.getCommandHandler();
 
         //ask user to try the word
-        System.out.println("Try "+word.getLabel()+". Number of letters in common?");
+        System.out.println("Number of letters in common with "+word.getLabel()+"?");
         //get user input indicating how many letters input word has in common with the answer
         int letterInCommon = InputHandler.getNum();
-        //did that solve the puzzle?
-        Set<Word> possibleNewMatches = wordGraph.getWordsFrom(word,letterInCommon);
-        System.out.print("Try ");
-        possibleNewMatches.forEach(match -> System.out.print(match.getLabel() + " "));
-        System.out.println("\b. Did it work? [Y/N]");
-        boolean itWorked = InputHandler.getYesNo();
-        //if so, congratulate the user and display the menu again
-        if(itWorked)
-        {
-            System.out.println("Yay!\n");
-            Main.start();
-        }
+        commandHandler.handleCommands();
 
-        //if not, solvePuzzle(Word)
-        else
-        {
-            Word triedWord;
-            if(possibleNewMatches.size() > 1)
-            {
-                System.out.println("Which word did you try?");
-                triedWord = Menu.wordSelector(possibleNewMatches);
+        //did that solve the puzzle?
+        Set<Word> possibleNewMatches = wordGraph.getWordsFrom(word.getLabel(),letterInCommon);
+        if(possibleNewMatches.size()>0) {
+            System.out.print("Try ");
+            possibleNewMatches.forEach(match -> System.out.print(match.getLabel() + " "));
+            System.out.println("\b. Did it work? [Y/N]");
+            boolean itWorked = InputHandler.getYesNo();
+            commandHandler.handleCommands();
+            //if so, congratulate the user and display the menu again
+            if (itWorked) {
+                triggerSuccess();
             }
-            else
-            {
-                triedWord = (Word)possibleNewMatches.toArray()[0];
+
+            //if not, solvePuzzle(Word)
+            else {
+                Word triedWord;
+                if (possibleNewMatches.size() > 1) {
+                    System.out.println("Which word did you try?");
+                    triedWord = Menu.wordSelector(possibleNewMatches);
+                    commandHandler.handleCommands();
+                } else {
+                    triedWord = (Word) possibleNewMatches.toArray()[0];
+                }
+                solvePuzzle(triedWord);
             }
-            solvePuzzle(triedWord);
         }
+        else if(word.getLabel().length() == letterInCommon) //The word has the same number of matching letters as the correct word
+        {
+            triggerSuccess();
+        }
+        else //There were no matches found
+        {
+            logicalFallacyRestart();
+        }
+    }
+
+    /**
+     * Triggered if the user found the correct word.
+     */
+    private void triggerSuccess()
+    {
+        System.out.println("Yay!\n");
+        Main.start();
+    }
+
+    /**
+     * Designed to be triggered when user input leads to a logical fallacy
+     */
+    private void logicalFallacyRestart()
+    {
+        System.out.println("Something went wrong - make sure you entered everything correctly.\nRestarting....\n\n");
+        Main.start();
     }
 
     Word getFirstWord()

@@ -18,22 +18,22 @@ class WordEdgeTest {
     @Test
     void getLettersInCommonNone() {
         WordEdge wordEdge = new WordEdge(AAAA,BBBB);
-        assertEquals(wordEdge.getLettersInCommon(),0);
+        assertEquals(0,wordEdge.getLettersInCommon());
     }
     @Test
     void getLettersInCommonOne() {
         WordEdge wordEdge = new WordEdge(AAAB,BBBB);
-        assertEquals(wordEdge.getLettersInCommon(),1);
+        assertEquals(1,wordEdge.getLettersInCommon());
     }
     @Test
     void getLettersInCommonLots() {
         WordEdge wordEdge = new WordEdge(AAAB,AAAA);
-        assertEquals(wordEdge.getLettersInCommon(),3);
+        assertEquals(3,wordEdge.getLettersInCommon());
     }
     @Test
     void getLettersInCommonAll() {
         WordEdge wordEdge = new WordEdge(AAAA,AAAA);
-        assertEquals(wordEdge.getLettersInCommon(),4);
+        assertEquals(4,wordEdge.getLettersInCommon());
     }
 
 

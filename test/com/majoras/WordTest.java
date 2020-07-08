@@ -35,11 +35,11 @@ class WordTest {
         words.add(AABBD);
         words.add(AAABC);
 
-        for(Word outerword : words)
+        for(Word outerWord : words)
         {
             for(Word innerWord : words)
             {
-                outerword.addEdge(innerWord);
+                outerWord.addEdge(innerWord);
             }
         }
     }
@@ -54,15 +54,20 @@ class WordTest {
     }
     @Test
     void compareToEqual() {
-        assertEquals(AABBD.compareTo(AAABC) ,0);
+        assertEquals(0,AABBD.compareTo(AAABC));
     }
 
     @Test
     void lettersInCommon() {
-
+        assertEquals(0,AAAAA.lettersInCommon(BBBBB));
+        assertEquals(1,AAAAA.lettersInCommon(ACCCC));
+        assertEquals(3,AAAAA.lettersInCommon(AAABC));
+        assertEquals(5,AAAAA.lettersInCommon(AAAAA));
     }
 
     @Test
     void getNumUnique_LettersInCommon_s() {
+        assertEquals(4,AAAAA.getNumUnique_LettersInCommon_s());
+        assertEquals(3,BBBBB.getNumUnique_LettersInCommon_s());
     }
 }

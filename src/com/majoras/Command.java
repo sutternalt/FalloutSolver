@@ -17,7 +17,7 @@ enum Command {
         //prompt the user to enter a backslash to do a command
         void performCommand()
         {
-            System.out.println("Forward slash(es) detected. Use '\\' insetad.\nRestarting...\n");
+            System.out.println("Forward slash(es) detected. Use '\\' insetad.\nRestarting...\n\n");
             Main.start();
         }
         String commandString()

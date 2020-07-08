@@ -10,6 +10,6 @@ class CommandTest {
 
     @Test
     void allCommandStrings() {
-        assertArrayEquals(Command.allCommandStrings(),(Arrays.stream(Command.class.getEnumConstants()).map(Command::commandString).toArray(String[]::new)));
+        assertArrayEquals(Arrays.stream(Command.class.getEnumConstants()).map(Command::commandString).toArray(String[]::new),Command.allCommandStrings());
     }
 }

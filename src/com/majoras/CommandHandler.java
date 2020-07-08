@@ -2,6 +2,7 @@ package com.majoras;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.regex.Pattern;
 
 /**
  * A message-based command system; stores commands in a FIFO data structure (queue) and executes all of them sequentially
@@ -23,9 +24,9 @@ class CommandHandler {
      * deals with commands contained in the messageQueue; assumes command is contained in COMMANDS
      */
     void handleCommands() {
-        for(Command command : messageQueue)
+        while (messageQueue.size()>0)
         {
-            command.performCommand();
+            messageQueue.remove().performCommand();
         }
     }
 
@@ -36,7 +37,15 @@ class CommandHandler {
      */
     static boolean containsACommand(String input)
     {
-        return Command.getCommandStringsAsSet().contains(input);
+        //check if the input contains any of the set of commandstrings
+        for(String commandString : Command.allCommandStrings())
+        {
+            if(input.contains(commandString))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -84,7 +93,27 @@ class CommandHandler {
         containedCommandsByIndex.remove(-1);
 
         //reduce string to first command
-        return Command.valueOf(containedCommandsByIndex.firstEntry().getValue());
+        return CommandHandler.commandStringToCommand(containedCommandsByIndex.firstEntry().getValue());
+    }
+
+    /**
+     * Assumes commandString is a valid commandString.
+     * @param commandStringToMatch
+     * @return
+     */
+    private static Command commandStringToCommand(String commandStringToMatch)
+    {
+        assert Command.getCommandStringsAsSet().contains(commandStringToMatch) : "commandString not found!";
+
+        for(Command command : Command.values())
+        {
+            if(command.commandString().equals(commandStringToMatch))
+            {
+                return command;
+            }
+        }
+        //if nothing was found, return null. Given the assertion, this should never happen!
+        return null;
     }
 
     //for testing only

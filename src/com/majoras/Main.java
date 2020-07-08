@@ -1,11 +1,14 @@
-//TODO: unit tests (should've made those first, damnit)
-//TODO: comprehensive tests
-
 package com.majoras;
 
+/**
+ * FalloutSolver
+ *
+ * A tool to help solve Fallout's computer hacking puzzles
+ * Originally designed, written, tested, and maintained by Andrew Majoras
+ */
 public class Main {
 
-    static final double VERSION = 0.1;
+    static final double VERSION = 0.8; //(Alpha) as of 7-8-20
     private static CommandHandler commandHandler;
 
     public static void main(String[] args) {
@@ -37,5 +40,12 @@ public class Main {
     static double getVersion()
     {
         return VERSION;
+    }
+
+    //for testing purposes only; initializes commandHandler
+    static void testInitCommandHandler()
+    {
+        assert commandHandler == null : "Only use this method for testing!";
+        commandHandler = new CommandHandler();
     }
 }

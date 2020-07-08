@@ -11,7 +11,7 @@ class Menu {
     {
         System.out.println("   //Fallout Solver\\\\");
         System.out.println("         v." + Main.VERSION );
-        System.out.println(Command.QUIT.toString() + " to quit, "+ Command.RESTART.toString() +" to start\n" + "=========================\n");
+        System.out.println(Command.QUIT.commandString() + " to quit, "+ Command.RESTART.commandString() +" to start\n" + "=========================\n");
     }
 
     /**

@@ -1,11 +1,17 @@
 package com.majoras;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * A set of utility methods for taking input strings and putting them into an expected format
  */
 class StringSanitizer {
     /**
      * reduces a string to a positive integer chain if possible; otherwise, returns -1
+     *
+     * This method will return the first positive integer chain it finds to the exclusion of all else.
+     *
      * @param input any string (preferably one containing a number)
      * @return a positive integer or -1 if an error occured
      */
@@ -13,28 +19,45 @@ class StringSanitizer {
     {
         int reducedNumber = -1;
 
-        //parse string for integers
+
+        //check if string contains non-positive-integer characters
         String shouldBeEmpty = input.replaceAll("[0-9]", "");
         boolean stringContainsNonNumberCharacters = (!shouldBeEmpty.equals(""));
 
-        //return -1 if input contained symbols not contained in [0-9]
-        if(!stringContainsNonNumberCharacters)
+        //if so, find the first string of positive integers (ie, one that does not start with a '-'
+        if(stringContainsNonNumberCharacters)
         {
-            //turn string into integer
-            try {
-                reducedNumber = Integer.parseInt(input); //numberformatexception must indicate a null string, given preprocessing
+            //split string by instances of a number
+            Pattern numbers = Pattern.compile("[0-9]");
+            Matcher matcher = numbers.matcher(input);
 
-                //if reducedNumber is <0 or null, reducednumber is now -1
-                if (reducedNumber < 0)
-                {
-                    reducedNumber = -1;
-                }
-            }
-            catch(NumberFormatException e)
+            boolean matchStartsWithNegative = true;
+            boolean matchExists = matcher.find();
+            String match = null;
+
+            while(matchExists && matchStartsWithNegative)
             {
-                System.out.println("Empty input detected.");
-                //do nothing, as the default return value of this function already indicates an error
+                match = matcher.group();
+                if(matcher.start() != 0) {
+                    matchStartsWithNegative = (input.charAt(matcher.start() - 1) == '-');
+                }
+                else
+                {
+                    matchStartsWithNegative = false; //a number starting at index 0 is necessarily positive
+                }
+                matchExists = matcher.find();
             }
+
+            if(match != null)
+            {
+                reducedNumber = Integer.parseInt(match);
+            }
+            //otherwise, return -1; input was "bad" and did not contain a positive int
+        }
+        //otherwise, the string already is a positive integer, so return that
+        else
+        {
+            reducedNumber = Integer.parseInt(input);
         }
 
         return reducedNumber;
@@ -73,9 +96,9 @@ class StringSanitizer {
     static String nonAlphasReplacedWithSpaces(String dirtyString)
     {
         //replace with spaces
-        String cleanString = dirtyString.replaceAll("[^A-Z ]"," ");
+        String cleanString = dirtyString.replaceAll("[^A-Z |a-z]"," ");
         //compress multiple spaces to single space
         cleanString = cleanString.replaceAll("  +"," ");
-        return cleanString;
+        return cleanString.strip();
     }
 }

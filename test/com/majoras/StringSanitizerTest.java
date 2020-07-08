@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringSanitizerTest {
 
     @Test
+    void reduceToFirstPositiveIntegerWorksIfIntIsAlone() {
+        assertEquals(1,StringSanitizer.reduceToFirstPositiveInteger("1"));
+    }
+    @Test
     void reduceToFirstPositiveIntegerWorksIfIntIsFirst() {
         assertEquals(1,StringSanitizer.reduceToFirstPositiveInteger("1Fiona"));
     }
@@ -29,27 +33,31 @@ class StringSanitizerTest {
 
     @Test
     void replaceWithCommandStringsCapitalizes() {
-        assertEquals(StringSanitizer.replaceWithCommandStrings("abc31"),"ABC31");
+        assertEquals("ABC31",StringSanitizer.replaceWithCommandStrings("abc31"));
+    }
+    @Test
+    void replaceWithCommandStringsWorksIfCommandIsAlone() {
+        assertEquals(Command.QUIT.commandString(),StringSanitizer.replaceWithCommandStrings(Command.QUIT.commandString()));
     }
     @Test
     void replaceWithCommandStringsWorksIfCommandIsFirst() {
-        assertEquals(StringSanitizer.replaceWithCommandStrings(Command.QUIT.commandString()+"Fiona"),Command.QUIT.commandString());
+        assertEquals(Command.QUIT.commandString(),StringSanitizer.replaceWithCommandStrings(Command.QUIT.commandString()+"Fiona"));
     }
     @Test
     void replaceWithCommandStringsWorksIfCommandIsMiddle() {
-        assertEquals(StringSanitizer.replaceWithCommandStrings("Sydney"+Command.QUIT.commandString()+"Fiona"),Command.QUIT.commandString());
+        assertEquals(Command.QUIT.commandString(),StringSanitizer.replaceWithCommandStrings("Sydney"+Command.QUIT.commandString()+"Fiona"));
     }
     @Test
     void replaceWithCommandStringsWorksIfCommandIsLast() {
-        assertEquals(StringSanitizer.replaceWithCommandStrings("Fiona"+Command.QUIT.commandString()),Command.QUIT.commandString());
+        assertEquals(Command.QUIT.commandString(),StringSanitizer.replaceWithCommandStrings("Fiona"+Command.QUIT.commandString()));
     }
     @Test
     void replaceWithCommandStringsWorksIfCommandIsFirstOfTwo() {
-        assertEquals(StringSanitizer.replaceWithCommandStrings(Command.QUIT.commandString()+"Fiona"+Command.RESTART.commandString()),Command.QUIT.commandString());
+        assertEquals(Command.QUIT.commandString(),StringSanitizer.replaceWithCommandStrings(Command.QUIT.commandString()+"Fiona"+Command.RESTART.commandString()));
     }
 
     @Test
     void nonAlphasReplacedWithSpaces() {
-        assertEquals(StringSanitizer.nonAlphasReplacedWithSpaces("1a////quick^brown\\fox       jumped over the"),"a quick brown fox jumped over the");
+        assertEquals("a quick brown fox jumped over the",StringSanitizer.nonAlphasReplacedWithSpaces("1a////quick^brown\\fox       jumped over the"));
     }
 }

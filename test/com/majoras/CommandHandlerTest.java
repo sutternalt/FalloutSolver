@@ -12,8 +12,20 @@ class CommandHandlerTest {
     public boolean testCommandSuccessful = false;
 
     @Test
-    void containsACommandTrueOnCommand() {
+    void containsACommandTrueOnCommandAlone() {
         assertTrue(CommandHandler.containsACommand(Command.QUIT.commandString()));
+    }
+    @Test
+    void containsACommandTrueOnCommandAsSecond() {
+        assertTrue(CommandHandler.containsACommand("Fiona"+Command.QUIT.commandString()));
+    }
+    @Test
+    void containsACommandTrueOnCommandAsFirst() {
+        assertTrue(CommandHandler.containsACommand(Command.QUIT.commandString()+"Fiona"));
+    }
+    @Test
+    void containsACommandTrueOnCommandAsMiddle() {
+        assertTrue(CommandHandler.containsACommand("Fiona"+Command.QUIT.commandString()+"Sydney"));
     }
     @Test
     void containsACommandFalseOnNoCommand(){
@@ -46,6 +58,11 @@ class CommandHandlerTest {
         assert(commandHandler.getMessageQueue().contains(Command.QUIT));
     }
 
+    @Test
+    void reduceToFirstCommandWorksWithCommandAlone() {
+        String testString = Command.QUIT.commandString();
+        assertTrue(Arrays.asList(Command.values()).contains(CommandHandler.reduceToFirstCommand(testString)));
+    }
     @Test
     void reduceToFirstCommandWorksWithCommandFirst() {
         String testString = Command.QUIT.commandString() + "Fiona";
